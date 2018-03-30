@@ -64,14 +64,16 @@ public class Main
 			}
 			System.out.println("Enter the Student Worker's monthly work hours:");
 			workHours = input.nextDouble();
-			System.out.println("Please create a 6-digit ID number for the resident (first number cannot be zero):");
+			System.out.println("Please create a 6-digit ID number for the resident:");
 			studId = input.nextInt();
 			input.nextLine();
-			while(studId > 999999 && studId < 100000)
+			String len = Integer.toString(studId);
+			while(len.length() != 6)
 			{
-				System.out.println("ID must be only six digits.");
+				System.out.println("ID must be six digits.");
 				studId = input.nextInt();
 				input.nextLine();
+				len = Integer.toString(studId);
 			}
 			
 			workers.add(new Worker(first, last, studentType, floorNum, studId, workHours));
@@ -93,14 +95,16 @@ public class Main
 				floorNum = input.nextInt();
 				input.nextLine();
 			}
-			System.out.println("Please create a 6-digit ID number for the resident (first number cannot be zero):");
+			System.out.println("Please create a 6-digit ID number for the resident:");
 			studId = input.nextInt();
 			input.nextLine();
-			while(studId > 999999 && studId < 100000)
+			String len = Integer.toString(studId);
+			while(len.length() != 6)
 			{
-				System.out.println("ID must be only six digits.");
+				System.out.println("ID must be six digits.");
 				studId = input.nextInt();
 				input.nextLine();
+				len = Integer.toString(studId);
 			}
 			
 			athletes.add(new Athlete(first, last, studentType, floorNum, studId));
@@ -122,15 +126,16 @@ public class Main
 				floorNum = input.nextInt();
 				input.nextLine();
 			}
-			System.out.println("Please create a 6-digit ID number for the resident (first number cannot be zero):");
+			System.out.println("Please create a 6-digit ID number for the resident:");
 			studId = input.nextInt();
 			input.nextLine();
-			String length;
-			while(studId > 999999 && studId < 100000)
+			String len = Integer.toString(studId);
+			while(len.length() != 6)
 			{
-				System.out.println("ID must be only six digits.");
+				System.out.println("ID must be six digits.");
 				studId = input.nextInt();
 				input.nextLine();
+				len = Integer.toString(studId);
 			}
 			
 			scholarships.add(new Scholarship(first, last, studentType, floorNum, studId));
